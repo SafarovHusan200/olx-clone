@@ -1,0 +1,65 @@
+<div class="container mtt">
+  <div class="row">
+    <div class="col-lg-8 offset-lg-2">
+      {{#if changeError}}
+        <div class="alert alert-danger" role="alert">
+          {{changeError}}
+        </div>
+      {{/if}}
+      <div class="card p-4 mb-5">
+        {{#if user}}
+          <form action="/profile/change" method="POST">
+
+            <div class="mb-3">
+              <label for="username" class="form-label">Username</label>
+              <input
+                type="text"
+                class="form-control"
+                placeholder="Eshmatov Toshmat"
+                id="username"
+                name="username"
+                value="{{user.username}}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="phone" class="form-label">Phone number</label>
+              <input
+                type="type"
+                class="form-control"
+                placeholder="998911234567"
+                id="phone"
+                name="phone"
+                value="{{user.phone}}"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="oldPassword" class="form-label">Old Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="oldPassword"
+                name="oldPassword"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="newPassword" class="form-label">New Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="newPassword"
+                name="newPassword"
+              />
+            </div>
+            <div class="d-grid gap-2">
+              <button
+                type="submit"
+                class="btn btn-primary"
+              >Registratsiya</button>
+            </div>
+          </form>
+        {{/if}}
+
+      </div>
+    </div>
+  </div>
+</div>
